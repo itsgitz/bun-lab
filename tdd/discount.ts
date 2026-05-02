@@ -6,7 +6,7 @@
 //   return total;
 // }
 
-// REFATOR PHASE (clean up)
+// REFACTOR PHASE (clean up)
 const DISCOUNT_THRESHOLD = 100;
 const DISCOUNT_RATE = 0.1;
 export function applyDiscount(total: number): number {
