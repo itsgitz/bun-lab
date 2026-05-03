@@ -18,9 +18,15 @@ async function main() {
   let awsProfile: string;
 
   try {
-    imageName = await input({ message: "Docker image name:", default: "bun-lab-lambda" });
+    imageName = await input({
+      message: "Docker image name:",
+      default: "bun-lab-lambda",
+    });
     imageTag = await input({ message: "Image tag:", default: "latest" });
-    ecrRepo = await input({ message: "ECR repository name:", default: "bun-lambda-demo" });
+    ecrRepo = await input({
+      message: "ECR repository name:",
+      default: "bun-lab-lambda",
+    });
     region = await input({ message: "AWS region:", default: "us-east-1" });
     awsProfile = await input({ message: "AWS profile:", default: "default" });
   } catch {
@@ -71,14 +77,19 @@ async function main() {
 
     console.log("\n✅ Deploy complete!");
   } catch (err) {
-    console.error(`\nBuild failed: ${err instanceof Error ? err.message : err}`);
+    console.error(
+      `\nBuild failed: ${err instanceof Error ? err.message : err}`,
+    );
     process.exit(1);
   }
 }
 
 if (import.meta.main) {
   main().catch((err) => {
-    console.error("\nUnexpected error:", err instanceof Error ? err.message : err);
+    console.error(
+      "\nUnexpected error:",
+      err instanceof Error ? err.message : err,
+    );
     process.exit(1);
   });
 }
