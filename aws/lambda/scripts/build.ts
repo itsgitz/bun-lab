@@ -20,12 +20,12 @@ async function main() {
   try {
     imageName = await input({
       message: "Docker image name:",
-      default: "bun-lab-lambda",
+      default: "bun-lambda-lab",
     });
     imageTag = await input({ message: "Image tag:", default: "latest" });
     ecrRepo = await input({
       message: "ECR repository name:",
-      default: "bun-lab-lambda",
+      default: "bun-lambda-lab",
     });
     region = await input({ message: "AWS region:", default: "us-east-1" });
     awsProfile = await input({ message: "AWS profile:", default: "default" });
